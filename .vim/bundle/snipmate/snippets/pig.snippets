@@ -1,0 +1,132 @@
+# IMPORT
+snippet import
+	IMPORT '${1:pig_file_with_macro}';${2}
+
+# DEFINE
+snippet define MACRO
+	DEFINE ${1:macro_name} ( ${2:params} ) RETURNS ${3:void__or__comma_seperated_alias_in_macro_body}
+	{
+		${4:pig_statements}
+	}
+
+# FOREACH
+snippet foreach FOREACH-block
+	FOREACH ${1:alias} GENERATE ${2:expression} AS ${3:feild_name};${4}
+snippet foreach FOREACH-nested-block
+	FOREACH ${1:alias}
+		{
+			${2:pig_statements};
+			GENERATE ${3:expression} AS ${4:feild_name}
+		};${5}
+
+
+# GROUP
+snippet group GROUP-ALL
+	GROUP ${1:alias} ALL;${2}
+snippet group GROUP-by
+	GROUP ${1:alias} BY ${2:field_name};${3}
+snippet cogroup
+	COGROUP ${1:alias} BY ${2:field_name}, ${3:alias} BY ${4:$2};${5}
+
+# JOIN
+snippet join JOIN-INNER
+	JOIN ${1:alias} BY ${2:field_name}, ${3:alias} BY ${4:$2};${5}
+snippet join JOIN-LEFT
+	JOIN ${1:alias} BY ${2:field_name} LEFT OUTER, ${3:alias} BY ${4:$2};${5}
+snippet join JOIN-RIGHT
+	JOIN ${1:alias} BY ${2:field_name} RIGHT OUTER, ${3:alias} BY ${4:$2};${5}
+snippet join JOIN-FULL
+	JOIN ${1:alias} BY ${2:field_name} FULL OUTER, ${3:alias} BY ${4:$2};${5}
+
+# ORDER
+snippet order
+	ORDER ${1:alias} BY ${2:field_name} ${3:ASC|DESC};${4}
+
+# RANK
+snippet rank
+	RANK ${1:alias} BY ${2:field_name} ${3:ASC|DESC};${4}
+
+# SAMPLE
+snippet sample
+	SAMPLE ${1:alias} ${2:fraction};${3}
+
+# LIMIT
+snippet limit
+	LIMIT ${1:alias} ${2:entries};${3}
+
+# CROSS
+snippet cross
+	CROSS ${1:alias}, ${2:alias};${3}
+
+# DISTINCT
+snippet distinct
+	DISTINCT ${1:alias};${2}
+
+# FILTER
+snippet filter
+	FILTER ${1:alias} BY ${2:expression_resulting_in_boolean};${3}
+
+# UNION
+snippet union
+	UNION ${1:alias}, ${2:alias};
+
+# STREAM
+snippet stream
+	STREAM ${1:alias} THROUGH ${2:command_in_quotes__or__command_alias};${3}
+
+# LOAD
+snippet load LOAD
+	LOAD '${1:path_to_files}' USING ${2:SerDe};${3};
+snippet load LOAD-AS
+	LOAD '${1:path_to_files}' USING ${2:SerDe} AS ( ${3:field_name}:${4:data_type} );${5};
+
+# STORE
+snippet store
+	STORE ${1:alias} INTO '${2:path_to_storage_directory}' USING ${3:SerDe};${4}
+
+# DESCRIBE
+snippet describe
+	DESCRIBE ${1:alias_to_print_schema};${2}
+
+# DUMP
+snippet dump
+	DUMP ${1:alias};${2}
+
+# EXPLAIN
+snippet explain
+	EXPLAIN ${1:alias_to_print_execution_plan};${2}
+
+# ASSERT
+snippet assert
+	ASSERT ${1:alias} BY ${2:expression_resulting_in_boolean};${3}
+
+# Functions
+snippet function COUNT
+	COUNT( ${1:field_name} )${2}
+snippet function AVG
+	AVG( ${1:field_name} )${2}
+snippet function SUM
+	SUM( ${1:field_name} )${2}
+snippet function MAX
+	MAX( ${1:field_name} )${2}
+snippet function MIN
+	MIN( ${1:field_name} )${2}
+snippet function CONCAT
+	CONCAT( ${1:field_name}, ${2:feild_name} )${3}
+snippet function TOKENIZE
+	TOKENIZE( ${1:field_to_split_into_chararray_using_space_and_symbol_delimiters} )${2}
+snippet function MATCHES
+	${1:field_name} MATCHES ${2:expression_like_regex}
+snippet function FLATTEN
+	FLATTEN( ${1:field_name} )${2}
+snippet function CASE-WHEN-THEN-ELSE-END
+
+
+
+
+
+
+
+
+
+

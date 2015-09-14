@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/homes/senaka/projects/SearchAdDemandRetrievalRankAnalysis/Code/Visualizers/PerformanceOfQueriesAndAdvertisers'
+let g:netrw_dirhist_2='/homes/senaka/bin/gifty/deploy/oozie/train'
+let g:netrw_dirhist_3='/homes/senaka/bin/gifty/deploy/oozie/join'
+let g:netrw_dirhist_4='/homes/senaka/bin/gifty/deploy/experiments'
+let g:netrw_dirhist_5='/homes/senaka/bin/gifty/deploy/experiments/swbtest/train'
+let g:netrw_dirhist_6='/homes/senaka/projects/ClickerInterestFinder/Code/DataExtractor'
